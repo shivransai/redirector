@@ -5,7 +5,7 @@ import { getEventLogger } from "./graphql/queries";
 import { createEngagementLogger } from "./graphql/mutations";
 import { useSearchParams } from 'react-router-dom';
 import { Amplify } from 'aws-amplify';
-import config from './amplifyconfiguration.json';
+import config from './aws-exports';
 
 Amplify.configure(config);
 const client = generateClient();
