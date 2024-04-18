@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Redirect linkToRedirectTo="https://www.pepperbowl.com" />} />
+          <Route path="/" element={<Redirect linkToRedirectTo="https://www.pepperbowl.com/" />} />
         </Routes>
       </BrowserRouter>
     </div>
