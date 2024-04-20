@@ -14,16 +14,11 @@ function Redirect({ linkToRedirectTo }) {
   const [searchParams] = useSearchParams();
 
   async function update_event_logger(user_hash, linkToRedirectTo) {
-    console.log("usr: " + user_hash)
-    console.log("link: " + linkToRedirectTo)
-
     const data = {
         user_hash_key: user_hash,
         sites_visited: linkToRedirectTo,
         last_updated: new Date().toISOString()
     }
-
-    console.log("new data " + data)
 
     await client.graphql({
         query: createEngagementLogger,
@@ -40,9 +35,6 @@ function Redirect({ linkToRedirectTo }) {
         paramTuples.push([key, value]);
     }
 
-    console.log(paramTuples[0][0] + " : " + paramTuples[0][1])
-    console.log(paramTuples[1][0] + " : " + paramTuples[1][1])
-
     // update logs
     if (paramTuples[1][0] == "hash_id") {
         const hash_id = paramTuples[1][1]
@@ -50,8 +42,7 @@ function Redirect({ linkToRedirectTo }) {
         update_event_logger(hash_id, sublink)
 
         if (paramTuples[0][0] == "subdirect") {
-            console.log("redirecting to " + linkToRedirectTo + sublink);
-            // window.location.href = linkToRedirectTo + sublink;
+            window.location.href = linkToRedirectTo + sublink;
         }
     }
 
