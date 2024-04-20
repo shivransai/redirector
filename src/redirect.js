@@ -51,7 +51,7 @@ function Redirect({ linkToRedirectTo }) {
 
         if (paramTuples[0][0] == "subdirect") {
             console.log("redirecting to " + linkToRedirectTo + sublink);
-            window.location.href = linkToRedirectTo + sublink;
+            // window.location.href = linkToRedirectTo + sublink;
         }
     }
 
