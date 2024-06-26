@@ -42,7 +42,7 @@ function Redirect({ linkToRedirectTo }) {
         update_event_logger(hash_id, sublink)
 
         if (paramTuples[0][0] == "subdirect") {
-            window.location.href = linkToRedirectTo + sublink + "/#recipe";
+            window.location.href = linkToRedirectTo + sublink;
         }
     }
 
